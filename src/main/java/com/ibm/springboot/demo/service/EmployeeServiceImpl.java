@@ -9,8 +9,7 @@ import com.ibm.springboot.demo.model.Employee;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
-	
-	
+
 	private List<Employee> empList = new ArrayList<>();
 
 	@Override
@@ -21,9 +20,17 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public List<Employee> getAllEmployees() {
+		return empList;
+	}
+
+	@Override
+	public Employee updateEmployee(Employee employee) {
 		return null;
 	}
 
-	
+	@Override
+	public Employee deleteEmployee(Integer employeeId) {
+		return null;
+	}
 
 }
