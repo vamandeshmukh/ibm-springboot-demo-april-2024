@@ -1,5 +1,8 @@
 package com.ibm.springboot.demo.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,7 +15,18 @@ public class EmployeeController {
 
 	@GetMapping("get-emp-by-id")
 	public Employee getEmpById() {
-		return null;
+		return new Employee(101, "Sonu", 10.5);
+	}
+
+	@GetMapping("get-all-emps")
+	public List<Employee> getAllEmps() {
+		
+		List<Employee> empList = new ArrayList<>();
+		
+//		empList.add();
+		
+
+		return empList;
 	}
 
 }
