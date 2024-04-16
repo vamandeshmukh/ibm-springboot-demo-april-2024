@@ -24,14 +24,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return null;
 	}
 
-	@Override
-	public Employee updateEmployee(Employee employee) {
-		return null;
-	}
-
-	@Override
-	public Employee deleteEmployee(Integer employeeId) {
-		return null;
-	}
+	
 
 }
