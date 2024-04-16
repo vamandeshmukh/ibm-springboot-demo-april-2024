@@ -3,7 +3,9 @@ package com.ibm.springboot.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,11 +18,13 @@ public class EmployeeController {
 
 	@Autowired
 	EmployeeService employeeService;
+	
+//	http://localhost:8080/emp/get-emp-by-id/101
 
-	@GetMapping("get-emp-by-id")
-	public Employee getEmpById() {
-		Integer eid = 101;
-		Employee employee = employeeService.getEmployeeById(eid);
+	@GetMapping("get-emp-by-id/{eid}")
+	public Employee getEmpById( @PathVariable(name = "eid") Integer employeeId) {
+		System.out.println(employeeId);
+		Employee employee = employeeService.getEmployeeById(employeeId);
 		System.out.println(employee.toString());
 		return employee;
 	}
