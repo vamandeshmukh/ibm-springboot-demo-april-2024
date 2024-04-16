@@ -27,6 +27,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
+	public Employee addEmployee(Employee employee) {
+		empList.add(employee);
+		return employee;
+	}
+
+	@Override
 	public Employee updateEmployee(Employee employee) {
 		return empList.set(empList.indexOf(getEmployeeById(employee.getEmployeeId())), employee);
 	}

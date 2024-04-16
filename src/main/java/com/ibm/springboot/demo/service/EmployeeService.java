@@ -10,6 +10,8 @@ public interface EmployeeService {
 
 	public abstract List<Employee> getAllEmployees();
 
+	public abstract Employee addEmployee(Employee employee);
+
 	public abstract Employee updateEmployee(Employee employee);
 
 	public abstract Employee deleteEmployee(Integer employeeId);

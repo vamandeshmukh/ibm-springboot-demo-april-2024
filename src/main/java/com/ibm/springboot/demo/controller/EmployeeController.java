@@ -3,12 +3,12 @@ package com.ibm.springboot.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,16 +24,6 @@ public class EmployeeController {
 
 //	http://localhost:8080/emp/get-emp-by-id/101
 
-//	@GetMapping("get-emp-by-id/{eid}")
-//	public ResponseEntity<Employee> getEmpById(@PathVariable(name = "eid") Integer employeeId) {
-//		System.out.println(employeeId);
-//		HttpStatus httpStatus = HttpStatus.OK;
-//		HttpHeaders httpHeaders = new HttpHeaders();
-//		httpHeaders.add("message", "Employee data fetched successfully.");
-//		Employee employee = employeeService.getEmployeeById(employeeId);
-//		return new ResponseEntity<Employee>(employee, httpHeaders, httpStatus);
-//	}
-
 	@GetMapping("get-emp-by-id/{eid}")
 	public ResponseEntity<Employee> getEmpById(@PathVariable(name = "eid") Integer employeeId) {
 		System.out.println(employeeId);
@@ -47,12 +37,30 @@ public class EmployeeController {
 	}
 
 	@GetMapping("get-all-emps")
-	public List<Employee> getAllEmps() {
+	public ResponseEntity<List<Employee>> getAllEmps() {
 		List<Employee> empList = employeeService.getAllEmployees();
 		empList.forEach(System.out::println);
-		return empList;
+		HttpStatus status = HttpStatus.OK;
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("message", "All employees data fetched successfully!");
+		ResponseEntity<List<Employee>> response = new ResponseEntity<List<Employee>>(empList, headers, status);
+		return response;
 	}
 
+	@PostMapping("add-emp")
+	public ResponseEntity<Employee> addEmp(Employee employee) {
+		return null;
+	}
+
+	@PostMapping("update-emp")
+	public Employee updateEmp(Employee employee) {
+		return null;
+	}
+
+	@PostMapping("delete-emp/{eid}")
+	public ResponseEntity<Employee> deleteEmp(@PathVariable(name = "eid") Integer employeeId) {
+		return null;
+	}
 }
 
 //package com.ibm.springboot.demo.controller;
