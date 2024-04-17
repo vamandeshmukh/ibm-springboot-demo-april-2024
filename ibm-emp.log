@@ -1,0 +1,162 @@
+2024-04-17T09:45:35.097+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : Starting App using Java 17.0.10 with PID 20752 (D:\VamanPro\Codes\ibm-3-apr-2024\sts-ibm-ws\ibm-springboot-demo\target\classes started by DELL in D:\VamanPro\Codes\ibm-3-apr-2024\sts-ibm-ws\ibm-springboot-demo)
+2024-04-17T09:45:35.098+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : No active profile set, falling back to 1 default profile: "default"
+2024-04-17T09:45:35.162+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-17T09:45:35.164+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-17T09:45:35.947+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-04-17T09:45:35.960+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-17T09:45:35.960+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-17T09:45:36.001+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-17T09:45:36.002+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 837 ms
+2024-04-17T09:45:36.309+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-17T09:45:36.344+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-04-17T09:45:36.354+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : Started App in 1.735 seconds (process running for 2.445)
+2024-04-17T09:45:52.436+05:30  INFO 20752 --- [ibm-springboot-demo] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-17T09:45:52.437+05:30  INFO 20752 --- [ibm-springboot-demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-17T09:45:52.438+05:30  INFO 20752 --- [ibm-springboot-demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-04-17T09:45:52.475+05:30  INFO 20752 --- [ibm-springboot-demo] [http-nio-8080-exec-1] c.i.s.demo.service.EmployeeServiceImpl   : 108
+2024-04-17T09:45:52.475+05:30  WARN 20752 --- [ibm-springboot-demo] [http-nio-8080-exec-1] c.i.s.demo.service.EmployeeServiceImpl   : 108
+2024-04-17T09:45:52.475+05:30 ERROR 20752 --- [ibm-springboot-demo] [http-nio-8080-exec-1] c.i.s.demo.service.EmployeeServiceImpl   : 108
+2024-04-17T09:45:52.478+05:30 ERROR 20752 --- [ibm-springboot-demo] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "com.ibm.springboot.demo.model.Employee.toString()" because "employee" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "com.ibm.springboot.demo.model.Employee.toString()" because "employee" is null
+	at com.ibm.springboot.demo.controller.EmployeeController.getEmpById(EmployeeController.java:31) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:925) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.19.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.5.jar:6.1.5]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.19.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.5.jar:6.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2024-04-17T09:45:54.876+05:30  INFO 20752 --- [ibm-springboot-demo] [http-nio-8080-exec-3] c.i.s.demo.service.EmployeeServiceImpl   : 102
+2024-04-17T09:45:54.876+05:30  WARN 20752 --- [ibm-springboot-demo] [http-nio-8080-exec-3] c.i.s.demo.service.EmployeeServiceImpl   : 102
+2024-04-17T09:45:54.877+05:30 ERROR 20752 --- [ibm-springboot-demo] [http-nio-8080-exec-3] c.i.s.demo.service.EmployeeServiceImpl   : 102
+2024-04-17T09:46:25.362+05:30  INFO 20752 --- [ibm-springboot-demo] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-04-17T09:46:25.445+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : Starting App using Java 17.0.10 with PID 20752 (D:\VamanPro\Codes\ibm-3-apr-2024\sts-ibm-ws\ibm-springboot-demo\target\classes started by DELL in D:\VamanPro\Codes\ibm-3-apr-2024\sts-ibm-ws\ibm-springboot-demo)
+2024-04-17T09:46:25.445+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : No active profile set, falling back to 1 default profile: "default"
+2024-04-17T09:46:25.588+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-04-17T09:46:25.589+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-17T09:46:25.589+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-17T09:46:25.600+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-17T09:46:25.600+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 153 ms
+2024-04-17T09:46:25.675+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-17T09:46:25.683+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-04-17T09:46:25.688+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : Started App in 0.263 seconds (process running for 51.779)
+2024-04-17T09:46:25.692+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-04-17T09:46:29.741+05:30  INFO 20752 --- [ibm-springboot-demo] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-17T09:46:29.741+05:30  INFO 20752 --- [ibm-springboot-demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-17T09:46:29.742+05:30  INFO 20752 --- [ibm-springboot-demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-04-17T09:46:29.744+05:30  INFO 20752 --- [ibm-springboot-demo] [http-nio-8080-exec-1] c.i.s.demo.service.EmployeeServiceImpl   : 101
+2024-04-17T09:46:56.315+05:30  INFO 20752 --- [ibm-springboot-demo] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-04-17T09:46:56.379+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : Starting App using Java 17.0.10 with PID 20752 (D:\VamanPro\Codes\ibm-3-apr-2024\sts-ibm-ws\ibm-springboot-demo\target\classes started by DELL in D:\VamanPro\Codes\ibm-3-apr-2024\sts-ibm-ws\ibm-springboot-demo)
+2024-04-17T09:46:56.380+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : No active profile set, falling back to 1 default profile: "default"
+2024-04-17T09:46:56.497+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-04-17T09:46:56.498+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-17T09:46:56.498+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-17T09:46:56.512+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-17T09:46:56.512+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 130 ms
+2024-04-17T09:46:56.575+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-17T09:46:56.582+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-04-17T09:46:56.589+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : Started App in 0.225 seconds (process running for 82.68)
+2024-04-17T09:46:56.592+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-04-17T09:47:11.023+05:30  INFO 20752 --- [ibm-springboot-demo] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-04-17T09:47:11.081+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : Starting App using Java 17.0.10 with PID 20752 (D:\VamanPro\Codes\ibm-3-apr-2024\sts-ibm-ws\ibm-springboot-demo\target\classes started by DELL in D:\VamanPro\Codes\ibm-3-apr-2024\sts-ibm-ws\ibm-springboot-demo)
+2024-04-17T09:47:11.081+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : No active profile set, falling back to 1 default profile: "default"
+2024-04-17T09:47:11.224+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-04-17T09:47:11.226+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-17T09:47:11.226+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-17T09:47:11.237+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-17T09:47:11.237+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 154 ms
+2024-04-17T09:47:11.288+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-17T09:47:11.295+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-04-17T09:47:11.304+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : Started App in 0.237 seconds (process running for 97.395)
+2024-04-17T09:47:11.305+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-04-17T09:47:35.787+05:30  INFO 20752 --- [ibm-springboot-demo] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-04-17T09:47:35.856+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : Starting App using Java 17.0.10 with PID 20752 (D:\VamanPro\Codes\ibm-3-apr-2024\sts-ibm-ws\ibm-springboot-demo\target\classes started by DELL in D:\VamanPro\Codes\ibm-3-apr-2024\sts-ibm-ws\ibm-springboot-demo)
+2024-04-17T09:47:35.856+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : No active profile set, falling back to 1 default profile: "default"
+2024-04-17T09:47:35.963+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-04-17T09:47:35.964+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-17T09:47:35.964+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-17T09:47:35.974+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-17T09:47:35.974+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 117 ms
+2024-04-17T09:47:36.021+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-17T09:47:36.026+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-04-17T09:47:36.035+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : Started App in 0.197 seconds (process running for 122.126)
+2024-04-17T09:47:36.036+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-04-17T09:47:46.363+05:30  INFO 20752 --- [ibm-springboot-demo] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-17T09:47:46.363+05:30  INFO 20752 --- [ibm-springboot-demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-17T09:47:46.364+05:30  INFO 20752 --- [ibm-springboot-demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-04-17T09:47:46.367+05:30  INFO 20752 --- [ibm-springboot-demo] [http-nio-8080-exec-1] c.i.s.demo.service.EmployeeServiceImpl   : getAllEmployees
+2024-04-17T09:47:49.138+05:30  INFO 20752 --- [ibm-springboot-demo] [http-nio-8080-exec-2] c.i.s.demo.service.EmployeeServiceImpl   : 101
+2024-04-17T10:00:09.221+05:30  INFO 20752 --- [ibm-springboot-demo] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-04-17T10:00:09.302+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : Starting App using Java 17.0.10 with PID 20752 (D:\VamanPro\Codes\ibm-3-apr-2024\sts-ibm-ws\ibm-springboot-demo\target\classes started by DELL in D:\VamanPro\Codes\ibm-3-apr-2024\sts-ibm-ws\ibm-springboot-demo)
+2024-04-17T10:00:09.302+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : No active profile set, falling back to 1 default profile: "default"
+2024-04-17T10:00:09.495+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-04-17T10:00:09.496+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-17T10:00:09.496+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-17T10:00:09.509+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-17T10:00:09.510+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 206 ms
+2024-04-17T10:00:09.561+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-17T10:00:09.566+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-04-17T10:00:09.569+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : Started App in 0.281 seconds (process running for 875.66)
+2024-04-17T10:00:09.571+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-04-17T10:01:03.345+05:30  INFO 20752 --- [ibm-springboot-demo] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-04-17T10:01:03.427+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : Starting App using Java 17.0.10 with PID 20752 (D:\VamanPro\Codes\ibm-3-apr-2024\sts-ibm-ws\ibm-springboot-demo\target\classes started by DELL in D:\VamanPro\Codes\ibm-3-apr-2024\sts-ibm-ws\ibm-springboot-demo)
+2024-04-17T10:01:03.427+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : No active profile set, falling back to 1 default profile: "default"
+2024-04-17T10:01:03.525+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9090 (http)
+2024-04-17T10:01:03.526+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-17T10:01:03.526+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-17T10:01:03.535+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-17T10:01:03.536+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 106 ms
+2024-04-17T10:01:03.579+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-17T10:01:03.585+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9090 (http) with context path ''
+2024-04-17T10:01:03.591+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : Started App in 0.177 seconds (process running for 929.681)
+2024-04-17T10:01:03.592+05:30  INFO 20752 --- [ibm-springboot-demo] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-04-17T10:01:25.127+05:30  INFO 20752 --- [ibm-springboot-demo] [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-17T10:01:25.128+05:30  INFO 20752 --- [ibm-springboot-demo] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-17T10:01:25.129+05:30  INFO 20752 --- [ibm-springboot-demo] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-04-17T10:01:25.137+05:30  INFO 20752 --- [ibm-springboot-demo] [http-nio-9090-exec-1] c.i.s.demo.service.EmployeeServiceImpl   : 101
+2024-04-17T10:01:40.304+05:30  INFO 20752 --- [ibm-springboot-demo] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)

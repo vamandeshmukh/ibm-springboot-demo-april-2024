@@ -22,29 +22,33 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public Employee getEmployeeById(Integer employeeId) {
 		LOG.info(employeeId.toString());
-		LOG.warn(employeeId.toString());
-		LOG.error(employeeId.toString());
+//		LOG.warn(employeeId.toString());
+//		LOG.error(employeeId.toString());
 		return empList.stream().filter(emp -> emp.getEmployeeId().equals(employeeId)).findFirst().orElse(null);
 	}
 
 	@Override
 	public List<Employee> getAllEmployees() {
+		LOG.info("getAllEmployees");
 		return empList;
 	}
 
 	@Override
 	public Employee addEmployee(Employee employee) {
+		LOG.info(employee.toString());
 		empList.add(employee);
 		return employee;
 	}
 
 	@Override
 	public Employee updateEmployee(Employee employee) {
+		LOG.info(employee.toString());
 		return empList.set(empList.indexOf(getEmployeeById(employee.getEmployeeId())), employee);
 	}
 
 	@Override
 	public Employee deleteEmployee(Integer employeeId) {
+		LOG.info(employeeId.toString());
 		Employee empToDelete = getEmployeeById(employeeId);
 		empList.remove(empToDelete);
 		return empToDelete;
