@@ -23,8 +23,6 @@ public class EmployeeController {
 	@Autowired
 	EmployeeService employeeService;
 
-//	http://localhost:8080/emp/get-emp-by-id/101
-
 	@GetMapping("get-emp-by-id/{eid}")
 	public ResponseEntity<Employee> getEmpById(@PathVariable(name = "eid") ObjectId employeeId) {
 		System.out.println(employeeId);
