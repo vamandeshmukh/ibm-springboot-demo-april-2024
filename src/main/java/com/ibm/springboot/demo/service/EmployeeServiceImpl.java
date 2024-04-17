@@ -30,19 +30,24 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public Employee getEmployeeById(String employeeId) {
 		LOG.info(employeeId);
 		Optional<Employee> empOptional = employeeRepository.findById(employeeId);
-		if (empOptional.isPresent())
-			return empOptional.get();
-		else {
+		if (empOptional.isEmpty()) {
 			String errorMessage = "Employee with id " + employeeId + " is not found!";
-			LOG.info(errorMessage);
+			LOG.warn(errorMessage);
 			throw new EmployeeNotFoundException(errorMessage);
 		}
+		return empOptional.get();
 	}
 
 	@Override
 	public List<Employee> getEmployeeByFirstName(String firstName) {
 		LOG.info(firstName);
-		return employeeRepository.findByFirstName(firstName);
+		List<Employee> empList = employeeRepository.findByFirstName(firstName);
+		if (empList.isEmpty()) {
+			String errorMessage = "Employee with firstName " + firstName + " is not found!";
+			LOG.warn(errorMessage);
+			throw new EmployeeNotFoundException(errorMessage);
+		}
+		return empList;
 	}
 
 	@Override
@@ -54,14 +59,16 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public Employee updateEmployee(Employee employee) {
 		LOG.info(employee.toString());
+		this.getEmployeeById(employee.getEmployeeId());
 		return employeeRepository.save(employee);
 	}
 
 	@Override
 	public Employee deleteEmployee(String employeeId) {
-		LOG.info(employeeId.toString());
+		LOG.info(employeeId);
+		Employee empToBeDeleted = this.getEmployeeById(employeeId);
 		employeeRepository.deleteById(employeeId);
-		return null;
+		return empToBeDeleted;
 	}
 
 }
