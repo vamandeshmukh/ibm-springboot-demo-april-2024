@@ -1,7 +1,14 @@
 package com.ibm.springboot.demo.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document("employees")
+//Entity
+//Table 
 public class Employee {
 
+	@Id
 	private Integer employeeId;
 	private String firstName;
 	private Double salary;
