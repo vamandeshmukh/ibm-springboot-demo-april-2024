@@ -2,12 +2,10 @@ package com.ibm.springboot.demo.service;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.ibm.springboot.demo.exception.EmployeeNotFoundException;
 import com.ibm.springboot.demo.model.Employee;
 import com.ibm.springboot.demo.repository.EmployeeRepository;
