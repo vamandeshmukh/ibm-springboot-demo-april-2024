@@ -24,7 +24,7 @@ public class EmployeeController {
 	EmployeeService employeeService;
 
 	@GetMapping("get-emp-by-id/{eid}")
-	public ResponseEntity<Employee> getEmpById(@PathVariable(name = "eid") ObjectId employeeId) {
+	public ResponseEntity<Employee> getEmpById(@PathVariable(name = "eid") String employeeId) {
 		System.out.println(employeeId);
 		Employee employee = employeeService.getEmployeeById(employeeId);
 		System.out.println(employee.toString());
@@ -46,20 +46,6 @@ public class EmployeeController {
 		return response;
 	}
 
-	@PostMapping("add-emp")
-	public ResponseEntity<Employee> addEmp(Employee employee) {
-		return null;
-	}
-
-	@PostMapping("update-emp")
-	public Employee updateEmp(Employee employee) {
-		return null;
-	}
-
-	@PostMapping("delete-emp/{eid}")
-	public ResponseEntity<Employee> deleteEmp(@PathVariable(name = "eid") Integer employeeId) {
-		return null;
-	}
 }
 
 //package com.ibm.springboot.demo.controller;
