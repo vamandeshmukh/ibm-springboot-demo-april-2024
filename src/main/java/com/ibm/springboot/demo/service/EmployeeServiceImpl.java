@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.bson.types.ObjectId;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,16 +21,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Autowired
 	EmployeeRepository employeeRepository;
 
-	private List<Employee> empList = new ArrayList<>(
-			Arrays.asList(new Employee(101, "Sonu", (double) 90000), new Employee(102, "Monu", (double) 99000),
-					new Employee(103, "Tonu", (double) 2000), new Employee(104, "Gonu", (double) 89000)));
+	private List<Employee> empList = new ArrayList<>();
 
 	@Override
-	public Employee getEmployeeById(Integer employeeId) {
-		LOG.info(employeeId.toString());
+	public Employee getEmployeeById(ObjectId objectId) {
+		LOG.info(objectId.toString());
 //		LOG.warn(employeeId.toString());
 //		LOG.error(employeeId.toString());
-		return empList.stream().filter(emp -> emp.getEmployeeId().equals(employeeId)).findFirst().orElse(null);
+		return empList.stream().filter(emp -> emp.getEmployeeId().equals(objectId)).findFirst().orElse(null);
 	}
 
 	@Override
@@ -59,10 +58,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public Employee deleteEmployee(Integer employeeId) {
-		LOG.info(employeeId.toString());
-		Employee empToDelete = getEmployeeById(employeeId);
-		empList.remove(empToDelete);
-		return empToDelete;
+//		LOG.info(employeeId.toString());
+//		Employee empToDelete = getEmployeeById(employeeId);
+//		empList.remove(empToDelete);
+		return null;
 	}
 
 }

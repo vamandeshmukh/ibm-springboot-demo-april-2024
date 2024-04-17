@@ -2,6 +2,7 @@ package com.ibm.springboot.demo.controller;
 
 import java.util.List;
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -25,7 +26,7 @@ public class EmployeeController {
 //	http://localhost:8080/emp/get-emp-by-id/101
 
 	@GetMapping("get-emp-by-id/{eid}")
-	public ResponseEntity<Employee> getEmpById(@PathVariable(name = "eid") Integer employeeId) {
+	public ResponseEntity<Employee> getEmpById(@PathVariable(name = "eid") ObjectId employeeId) {
 		System.out.println(employeeId);
 		Employee employee = employeeService.getEmployeeById(employeeId);
 		System.out.println(employee.toString());
