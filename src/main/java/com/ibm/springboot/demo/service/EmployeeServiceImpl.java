@@ -6,14 +6,19 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ibm.springboot.demo.model.Employee;
+import com.ibm.springboot.demo.repository.EmployeeRepository;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
 	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
+
+	@Autowired
+	EmployeeRepository employeeRepository;
 
 	private List<Employee> empList = new ArrayList<>(
 			Arrays.asList(new Employee(101, "Sonu", (double) 90000), new Employee(102, "Monu", (double) 99000),
@@ -30,8 +35,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public List<Employee> getAllEmployees() {
 		LOG.info("getAllEmployees");
-		return empList;
+		return employeeRepository.findAll();
 	}
+
+	// @Override
+//	public List<Employee> getAllEmployees() {
+//		LOG.info("getAllEmployees");
+//		return empList;
+//	}
 
 	@Override
 	public Employee addEmployee(Employee employee) {
