@@ -9,4 +9,6 @@ import com.ibm.springboot.demo.model.Employee;
 @Repository
 public interface EmployeeRepository extends MongoRepository<Employee, ObjectId> {
 
+	// no need to define methods for basic CRUD operations
+
 }

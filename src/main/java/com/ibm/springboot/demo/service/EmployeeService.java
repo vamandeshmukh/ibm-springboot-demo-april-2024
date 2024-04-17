@@ -8,13 +8,13 @@ import com.ibm.springboot.demo.model.Employee;
 
 public interface EmployeeService {
 
-	public abstract Employee getEmployeeById(ObjectId employeeId);
-
 	public abstract List<Employee> getAllEmployees();
+
+	public abstract Employee getEmployeeById(ObjectId employeeId);
 
 	public abstract Employee addEmployee(Employee employee);
 
 	public abstract Employee updateEmployee(Employee employee);
 
-	public abstract Employee deleteEmployee(Integer employeeId);
+	public abstract Employee deleteEmployee(ObjectId employeeId);
 }
