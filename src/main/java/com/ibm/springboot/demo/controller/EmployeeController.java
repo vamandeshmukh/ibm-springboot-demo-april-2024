@@ -46,7 +46,6 @@ public class EmployeeController {
 
 	@GetMapping("get-emp-by-name/{fname}")
 	public ResponseEntity<List<Employee>> getEmpName(@PathVariable(name = "fname") String firstName) {
-		System.out.println(firstName);
 		List<Employee> empList = employeeService.getEmployeeByFirstName(firstName);
 		HttpStatus status = HttpStatus.OK;
 		HttpHeaders headers = new HttpHeaders();

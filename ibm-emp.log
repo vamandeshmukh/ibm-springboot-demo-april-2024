@@ -2124,3 +2124,5 @@ Identify and stop the process that's listening on port 8090 or configure this ap
 2024-04-17T14:52:58.566+05:30  INFO 12764 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : Started App in 0.148 seconds (process running for 2027.965)
 2024-04-17T14:52:58.567+05:30  INFO 12764 --- [ibm-springboot-demo] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
 2024-04-17T14:52:58.567+05:30  INFO 12764 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : Started.
+2024-04-17T14:55:07.398+05:30  INFO 12764 --- [ibm-springboot-demo] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-04-17T14:55:07.430+05:30  INFO 12764 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : Starting...
