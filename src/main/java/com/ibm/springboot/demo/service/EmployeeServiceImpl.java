@@ -27,6 +27,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public Employee getEmployeeById(String objectId) {
+		// what of the eid does not exist 
 		LOG.info(objectId.toString());
 		return employeeRepository.findById(objectId).get();
 	}
