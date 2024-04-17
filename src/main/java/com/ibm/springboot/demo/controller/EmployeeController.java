@@ -2,14 +2,12 @@ package com.ibm.springboot.demo.controller;
 
 import java.util.List;
 
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,6 +21,17 @@ public class EmployeeController {
 	@Autowired
 	EmployeeService employeeService;
 
+	@GetMapping("get-all-emps")
+	public ResponseEntity<List<Employee>> getAllEmps() {
+		List<Employee> empList = employeeService.getAllEmployees();
+		empList.forEach(System.out::println);
+		HttpStatus status = HttpStatus.OK;
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("message", "All employees data fetched successfully!");
+		ResponseEntity<List<Employee>> response = new ResponseEntity<List<Employee>>(empList, headers, status);
+		return response;
+	}
+
 	@GetMapping("get-emp-by-id/{eid}")
 	public ResponseEntity<Employee> getEmpById(@PathVariable(name = "eid") String employeeId) {
 		System.out.println(employeeId);
@@ -35,13 +44,13 @@ public class EmployeeController {
 		return response;
 	}
 
-	@GetMapping("get-all-emps")
-	public ResponseEntity<List<Employee>> getAllEmps() {
-		List<Employee> empList = employeeService.getAllEmployees();
-		empList.forEach(System.out::println);
+	@GetMapping("get-emp-by-name/{fname}")
+	public ResponseEntity<List<Employee>> getEmpName(@PathVariable(name = "fname") String firstName) {
+		System.out.println(firstName);
+		List<Employee> empList = employeeService.getEmployeeByFirstName(firstName);
 		HttpStatus status = HttpStatus.OK;
 		HttpHeaders headers = new HttpHeaders();
-		headers.add("message", "All employees data fetched successfully!");
+		headers.add("message", "Employees data fetched successfully!");
 		ResponseEntity<List<Employee>> response = new ResponseEntity<List<Employee>>(empList, headers, status);
 		return response;
 	}
