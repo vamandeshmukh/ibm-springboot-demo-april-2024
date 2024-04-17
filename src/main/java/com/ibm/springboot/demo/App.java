@@ -5,10 +5,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class App {
+	
+	LOG 
 
 	public static void main(String[] args) {
-		System.out.println("Start");
+		LOG.info("Starting...");
 		SpringApplication.run(App.class, args);
+		LOG.info("Started.");
 	}
 
 }
