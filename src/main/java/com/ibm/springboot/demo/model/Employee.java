@@ -1,6 +1,5 @@
 package com.ibm.springboot.demo.model;
 
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -8,28 +7,32 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Employee {
 
 	@Id
-	private ObjectId employeeId;
+	private String employeeId;
 	private String firstName;
 	private Double salary;
-
-//	constructors, getters, setters etc 
 
 	public Employee() {
 		super();
 	}
 
-	public Employee(ObjectId employeeId, String firstName, Double salary) {
+	public Employee(String firstName, Double salary) {
+		super();
+		this.firstName = firstName;
+		this.salary = salary;
+	}
+
+	public Employee(String employeeId, String firstName, Double salary) {
 		super();
 		this.employeeId = employeeId;
 		this.firstName = firstName;
 		this.salary = salary;
 	}
 
-	public ObjectId getEmployeeId() {
+	public String getEmployeeId() {
 		return employeeId;
 	}
 
-	public void setEmployeeId(ObjectId employeeId) {
+	public void setEmployeeId(String employeeId) {
 		this.employeeId = employeeId;
 	}
 

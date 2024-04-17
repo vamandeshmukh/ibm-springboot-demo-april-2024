@@ -26,7 +26,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public Employee getEmployeeById(ObjectId objectId) {
+	public Employee getEmployeeById(String objectId) {
 		LOG.info(objectId.toString());
 		return employeeRepository.findById(objectId).get();
 	}
@@ -44,7 +44,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public Employee deleteEmployee(ObjectId employeeId) {
+	public Employee deleteEmployee(String employeeId) {
 		LOG.info(employeeId.toString());
 		employeeRepository.deleteById(employeeId);
 		return null;
