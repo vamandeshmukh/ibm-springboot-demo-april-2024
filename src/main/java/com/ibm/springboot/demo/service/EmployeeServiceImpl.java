@@ -50,6 +50,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public Employee addEmployee(Employee employee) {
+		// any better code is needed? 
 		LOG.info(employee.toString());
 		return employeeRepository.save(employee);
 	}
@@ -58,6 +59,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public Employee updateEmployee(Employee employee) {
 		LOG.info(employee.toString());
 		this.getEmployeeById(employee.getEmployeeId());
+		// better code is needed? 
 		return employeeRepository.save(employee);
 	}
 
