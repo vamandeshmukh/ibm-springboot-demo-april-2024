@@ -29,9 +29,9 @@ public class EmployeeServiceAspect {
 	@AfterReturning("execution(* com.ibm.springboot.demo.service.*.*(..))")
 	public void serviceSuccess() {
 		// assignment for today 
-		// 1. send email to a specific id , use yahoo mail 
-		// 2. get to know spring actuator 
-		// 3. basic understanding of microservices 
+		// 1. send email from aspect advice, e.g. use yahoo mail 
+		// 2. pre-study spring actuator 
+		// 3. pre-study microservices 
 		LOG.info("Data returned successfully");
 	}
 

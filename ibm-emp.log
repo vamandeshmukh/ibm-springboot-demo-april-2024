@@ -3862,3 +3862,5 @@ Caused by: org.springframework.beans.factory.BeanCurrentlyInCreationException: E
 2024-04-18T16:49:13.646+05:30  INFO 12380 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : Started App in 0.546 seconds (process running for 5847.656)
 2024-04-18T16:49:13.647+05:30  INFO 12380 --- [ibm-springboot-demo] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
 2024-04-18T16:49:13.647+05:30  INFO 12380 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : Started.
+2024-04-18T16:59:11.065+05:30  INFO 12380 --- [ibm-springboot-demo] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-04-18T16:59:11.107+05:30  INFO 12380 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : Starting...
