@@ -3880,3 +3880,4 @@ Caused by: org.springframework.beans.factory.BeanCurrentlyInCreationException: E
 2024-04-18T16:59:11.647+05:30  INFO 12380 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : Started App in 0.537 seconds (process running for 6445.658)
 2024-04-18T16:59:11.648+05:30  INFO 12380 --- [ibm-springboot-demo] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
 2024-04-18T16:59:11.648+05:30  INFO 12380 --- [ibm-springboot-demo] [restartedMain] com.ibm.springboot.demo.App              : Started.
+2024-04-18T17:02:12.816+05:30  INFO 12380 --- [ibm-springboot-demo] [RMI TCP Connection(202)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
