@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,7 +27,6 @@ public class EmployeeController {
 	@GetMapping("get-all-emps")
 	public ResponseEntity<List<Employee>> getAllEmps() {
 		List<Employee> empList = employeeService.getAllEmployees();
-		empList.forEach(System.out::println);
 		HttpStatus status = HttpStatus.OK;
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("message", "All employees data fetched successfully!");
@@ -36,9 +36,7 @@ public class EmployeeController {
 
 	@GetMapping("get-emp-by-id/{eid}")
 	public ResponseEntity<Employee> getEmpById(@PathVariable(name = "eid") String employeeId) {
-		System.out.println(employeeId);
 		Employee employee = employeeService.getEmployeeById(employeeId);
-		System.out.println(employee.toString());
 		HttpStatus status = HttpStatus.OK;
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("message", "Employee data fetched successfully!");
@@ -57,7 +55,7 @@ public class EmployeeController {
 	}
 
 	@PostMapping("add-emp")
-	public ResponseEntity<Employee> addEmp(@RequestBody Employee employee) {
+	public ResponseEntity<Employee> addEmp(@RequestBody Employee employee, BindingResult result) {
 		Employee empToBeAdded = employeeService.addEmployee(employee);
 		HttpStatus status = HttpStatus.OK;
 		HttpHeaders headers = new HttpHeaders();

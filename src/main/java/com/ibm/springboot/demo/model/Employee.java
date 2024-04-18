@@ -8,7 +8,13 @@ public class Employee {
 
 	@Id
 	private String employeeId;
+
 	private String firstName;
+
+	private String email;
+
+	private Long aadhaar;
+
 	private Double salary;
 
 	public Employee() {
@@ -25,6 +31,15 @@ public class Employee {
 		super();
 		this.employeeId = employeeId;
 		this.firstName = firstName;
+		this.salary = salary;
+	}
+
+	public Employee(String employeeId, String firstName, String email, Long aadhaar, Double salary) {
+		super();
+		this.employeeId = employeeId;
+		this.firstName = firstName;
+		this.email = email;
+		this.aadhaar = aadhaar;
 		this.salary = salary;
 	}
 
@@ -52,30 +67,26 @@ public class Employee {
 		this.salary = salary;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Long getAadhaar() {
+		return aadhaar;
+	}
+
+	public void setAadhaar(Long aadhaar) {
+		this.aadhaar = aadhaar;
+	}
+
 	@Override
 	public String toString() {
-		return "Employee [employeeId=" + employeeId + ", firstName=" + firstName + ", salary=" + salary + "]";
+		return "Employee [employeeId=" + employeeId + ", firstName=" + firstName + ", email=" + email + ", aadhaar="
+				+ aadhaar + ", salary=" + salary + "]";
 	}
 
 }
-
-//package com.ibm.springboot.demo.model;
-//
-//import lombok.AllArgsConstructor;
-//import lombok.Getter;
-//import lombok.NoArgsConstructor;
-//import lombok.Setter;
-//import lombok.ToString;
-//
-//@NoArgsConstructor
-//@AllArgsConstructor
-//@Getter
-//@Setter
-//@ToString
-//public class Employee {
-//
-//	private Integer employeeId;
-//	private String firstName;
-//	private Double salary;
-//
-//}

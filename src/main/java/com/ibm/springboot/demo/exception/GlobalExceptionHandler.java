@@ -20,4 +20,6 @@ public class GlobalExceptionHandler {
 		return response;
 	}
 
+	// You can add additional @ExceptionHandler methods for other exceptions
+
 }
