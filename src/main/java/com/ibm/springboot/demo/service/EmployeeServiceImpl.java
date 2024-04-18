@@ -27,6 +27,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public Employee getEmployeeById(String employeeId) {
+		LOG.info(employeeId);
 		Optional<Employee> empOptional = employeeRepository.findById(employeeId);
 		if (empOptional.isEmpty()) {
 			String errorMessage = "Employee with the id " + employeeId + " is not found!";
