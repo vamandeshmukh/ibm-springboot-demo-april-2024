@@ -57,7 +57,7 @@ public class EmployeeController {
 	@PostMapping("add-emp")
 	public ResponseEntity<Employee> addEmp(@RequestBody Employee employee, BindingResult result) {
 		Employee empToBeAdded = employeeService.addEmployee(employee);
-		HttpStatus status = HttpStatus.OK;
+		HttpStatus status = HttpStatus.CREATED;
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("message", "Employee added successfully!");
 		ResponseEntity<Employee> response = new ResponseEntity<Employee>(empToBeAdded, headers, status);
