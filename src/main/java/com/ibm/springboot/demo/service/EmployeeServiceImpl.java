@@ -21,19 +21,19 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public List<Employee> getAllEmployees() {
 		LOG.info("getAllEmployees");
+		// what if the collection is empty ?
 		return employeeRepository.findAll();
 	}
 
 	@Override
 	public Employee getEmployeeById(String employeeId) {
-		LOG.info(employeeId);
 		Optional<Employee> empOptional = employeeRepository.findById(employeeId);
 		if (empOptional.isEmpty()) {
-			String errorMessage = "Employee with id " + employeeId + " is not found!";
+			String errorMessage = "Employee with the id " + employeeId + " is not found!";
 			LOG.warn(errorMessage);
 			throw new EmployeeNotFoundException(errorMessage);
-		}
-		return empOptional.get();
+		} else
+			return empOptional.get();
 	}
 
 	@Override
@@ -68,7 +68,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 		employeeRepository.deleteById(employeeId);
 		return empToBeDeleted;
 	}
-
 }
 
 //package com.ibm.springboot.demo.service;
