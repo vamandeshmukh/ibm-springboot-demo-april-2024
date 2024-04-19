@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,7 +23,7 @@ public class EmployeeController {
 	@Autowired
 	EmployeeService employeeService;
 
-	@GetMapping("get-all-emps")
+	@GetMapping(path = "get-all-emps", produces = "application/json")
 	public ResponseEntity<List<Employee>> getAllEmps() {
 		List<Employee> empList = employeeService.getAllEmployees();
 		HttpStatus status = HttpStatus.OK;
@@ -54,8 +53,8 @@ public class EmployeeController {
 		return response;
 	}
 
-	@PostMapping("add-emp")
-	public ResponseEntity<Employee> addEmp(@RequestBody Employee employee, BindingResult result) {
+	@PostMapping(path = "add-emp", produces = "application/json", consumes = "application/json")
+	public ResponseEntity<Employee> addEmp(@RequestBody Employee employee) {
 		Employee empToBeAdded = employeeService.addEmployee(employee);
 		HttpStatus status = HttpStatus.CREATED;
 		HttpHeaders headers = new HttpHeaders();
