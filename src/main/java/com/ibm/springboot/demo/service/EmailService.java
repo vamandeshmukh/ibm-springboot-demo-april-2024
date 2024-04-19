@@ -19,12 +19,12 @@ public class EmailService {
 
 	public void sendEmail(Employee employee) {
 		LOG.info(employee.getEmail());
-//		SimpleMailMessage mailMessage = new SimpleMailMessage();
-//		mailMessage.setFrom("");
-//		mailMessage.setTo(employee.getEmail());
-//		mailMessage.setSubject(employee.getFirstName().toUpperCase() + "'s Data Accessed");
-//		mailMessage.setText("Hi " + employee.getFirstName() + ". \nYour data in the database with the id "
-//				+ employee.getEmployeeId() + " was accessed just now.");
+		SimpleMailMessage mailMessage = new SimpleMailMessage();
+		mailMessage.setFrom("");
+		mailMessage.setTo(employee.getEmail());
+		mailMessage.setSubject(employee.getFirstName().toUpperCase() + "'s Data Accessed");
+		mailMessage.setText("Hi " + employee.getFirstName() + ". \nYour data in the database with the id "
+				+ employee.getEmployeeId() + " was accessed just now.");
 //		LOG.info(mailMessage.toString());
 //		javaMailSender.send(mailMessage);
 	}
