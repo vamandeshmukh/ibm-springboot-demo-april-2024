@@ -24,6 +24,8 @@ public class ThymeleafController {
 	@GetMapping("/user")
 	public String user(Model model) {
 		List<Employee> empList = employeeService.getAllEmployees();
+//		model.addAllAttributes(empList);
+		System.out.println(model);
 		model.addAttribute("firstName", empList.get(0).getFirstName());
 		return "user";
 	}
