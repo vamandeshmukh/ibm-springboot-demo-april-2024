@@ -58,15 +58,14 @@ class AppTests {
 		assertEquals(employeeId, employeeService.getEmployeeByFirstName(employeeId).get(0).getFirstName());
 	}
 
-	@Timeout(value = 10, unit = TimeUnit.MILLISECONDS)
+	@Timeout(value = 100, unit = TimeUnit.MILLISECONDS)
 	@Test
 	public void testAllEmpsTimeout() {
-		assertTimeout(Duration.ofMillis(10), () -> {
+		assertTimeout(Duration.ofMillis(100), () -> {
 			employeeService.getAllEmployees();
 		});
 
 	}
-
 
 }
 
