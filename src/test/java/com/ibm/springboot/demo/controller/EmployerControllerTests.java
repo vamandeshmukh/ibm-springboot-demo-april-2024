@@ -35,8 +35,8 @@ public class EmployerControllerTests {
 		empList.add(new Employee("101", "Sonu", 10.5));
 		empList.add(new Employee("102", "Monu", 12.5));
 		empList.add(new Employee("103", "Tonu", 11.5));
-
 		when(employeeService.getAllEmployees()).thenReturn(empList);
+
 	}
 
 	@Test
