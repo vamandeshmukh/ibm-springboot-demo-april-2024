@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.autoconfigure.wavefront.WavefrontProperties.Application;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.ibm.springboot.demo.model.Employee;
@@ -46,7 +47,7 @@ public class EmployerControllerTests {
 
 	@Test
 	public void testEmployeeControllerMediaType() throws Exception {
-		mockMvc.perform(get("/emp/get-all-emps")).andExpect(content().contentType(Application.JSON ) );
+		mockMvc.perform(get("/emp/get-all-emps")).andExpect(content().contentType(MediaType.APPLICATION_JSON));
 	}
 
 	@Test
