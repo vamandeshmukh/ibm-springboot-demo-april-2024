@@ -3,6 +3,7 @@ package com.ibm.springboot.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ibm.springboot.demo.model.Employee;
@@ -22,6 +24,19 @@ public class EmployeeController {
 
 	@Autowired
 	private EmployeeService employeeService;
+	
+//	http://localhost:8090/emp/get-emp-pages?page=1&size=5&sortBy=firstName
+
+	@GetMapping(path = "get-emp-pages", produces = "application/json")
+	public ResponseEntity<Page<Employee>> getEmpPages(@RequestParam(defaultValue = "0") Integer page,
+			@RequestParam(defaultValue = "10") Integer size, @RequestParam(defaultValue = "id") String sortBy) {
+		Page<Employee> empList = employeeService.getEmployeePages(page, size, sortBy);
+		HttpStatus status = HttpStatus.OK;
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("message", "All employees data fetched successfully!");
+		ResponseEntity<Page<Employee>> response = new ResponseEntity<Page<Employee>>(empList, headers, status);
+		return response;
+	}
 
 	@GetMapping(path = "get-all-emps", produces = "application/json")
 	public ResponseEntity<List<Employee>> getAllEmps() {

@@ -5,6 +5,9 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import com.ibm.springboot.demo.exception.EmployeeNotFoundException;
 import com.ibm.springboot.demo.model.Employee;
@@ -17,6 +20,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Autowired
 	EmployeeRepository employeeRepository;
+
+	@Override
+	public Page<Employee> getEmployeePages(Integer page, Integer size, String sortBy) {
+		PageRequest pageable = PageRequest.of(page, size, Sort.by(sortBy));
+		return employeeRepository.findAll(pageable);
+	}
 
 	@Override
 	public List<Employee> getAllEmployees() {
@@ -69,6 +78,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		employeeRepository.deleteById(employeeId);
 		return empToBeDeleted;
 	}
+
 }
 
 //package com.ibm.springboot.demo.service;
