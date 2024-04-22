@@ -21,7 +21,7 @@ import com.ibm.springboot.demo.service.EmployeeService;
 public class EmployeeController {
 
 	@Autowired
-	EmployeeService employeeService;
+	private EmployeeService employeeService;
 
 	@GetMapping(path = "get-all-emps", produces = "application/json")
 	public ResponseEntity<List<Employee>> getAllEmps() {
