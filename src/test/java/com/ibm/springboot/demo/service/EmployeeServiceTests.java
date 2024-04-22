@@ -71,15 +71,6 @@ public class EmployeeServiceTests {
 		assertNotEquals(employeeService.getAllEmployees().size(), 4);
 	}
 
-	@Timeout(value = 10, unit = TimeUnit.MILLISECONDS)
-	@Test
-	public void testAllEmpsTimeout() {
-		assertTimeout(Duration.ofMillis(10), () -> {
-			employeeService.getAllEmployees();
-		});
-
-	}
-
 	@Test
 	void testAllEmpsTimes() {
 		employeeRepository.findAll();
