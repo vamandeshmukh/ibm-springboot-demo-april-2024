@@ -2,12 +2,19 @@ package com.ibm.springboot.demo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertTimeout;
+
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,19 +30,19 @@ class AppTests {
 	private EmployeeService employeeService;
 
 	private static final Logger LOG = LoggerFactory.getLogger(AppTests.class);
-	
+
 	@BeforeAll
 	public static void setUp() {
 		LOG.info("before all");
 	}
-	
+
 	@AfterAll
 	public static void tearDown() {
 		LOG.info("after all");
 	}
-	
+
 //	@BeforeEach
-	
+
 //	@AfterEach
 
 //	@Test
@@ -49,13 +56,22 @@ class AppTests {
 		assertEquals(employeeService.getAllEmployees().size(), 15);
 	}
 
-//	@Test
-//	public void testAllEmps2() {
-//		assertNotEquals(employeeService.getAllEmployees().size(), 15);
-//	}
+	@ParameterizedTest
+	@ValueSource(strings = { "Siddharth", "Yuvraj" })
+	void testGetEmpsById(String employeeId) {
+		assertEquals(employeeId, employeeService.getEmployeeByFirstName(employeeId).get(0).getFirstName());
+	}
+
+	@Timeout(value = 10, unit = TimeUnit.MILLISECONDS)
+	@Test
+	public void testAllEmpsTimeout() {
+		assertTimeout(Duration.ofMillis(10), () -> {
+			employeeService.getAllEmployees();
+		});
+
+	}
+
 }
-
-
 
 //package com.ibm.springboot.demo;
 //
