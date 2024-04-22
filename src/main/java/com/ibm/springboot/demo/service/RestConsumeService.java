@@ -9,7 +9,9 @@ public class RestConsumeService {
 	private RestTemplate restTemplate = new RestTemplate();
 
 	public String getRestData() {
+
 		String apiUrl = "https://jsonplaceholder.typicode.com/posts/22";
+
 		return restTemplate.getForObject(apiUrl, String.class);
 	}
 }
